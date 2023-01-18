@@ -2,6 +2,7 @@
 
 
 // Found these questions on https://www.interviewbit.com/javascript-mcq/
+// I got this idea from the event-bubbling section in the UW Gitlab.
 var multiQuestions = [
 
     // Question 1
@@ -44,6 +45,9 @@ var multiQuestions = [
         answer: 'All of the above'
     },
 ];
+
+// TO DO: I need to come up with a function to call this variable, and print the questions on the page. Possibly with .innerHTML
+
 
 // This syntax was taken from the UW Gitlab repository, on Web-APIs - Day 01 - 09-Ins-Timers-Intervals
 
