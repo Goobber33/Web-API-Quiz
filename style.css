@@ -1,0 +1,11 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.timer {
+    display: flex;
+    justify-content: end;
+    padding: 30px;
+}
