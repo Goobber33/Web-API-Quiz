@@ -1,13 +1,33 @@
 // I need to write questions, multiple choice answers, and the correct answer
 
 
-// Create an array?
+// Found these questions on https://www.interviewbit.com/javascript-mcq/
 var multiQuestions = [
+
+    // Question 1
+
     {
         question: 'Which of the following methods is used to access HTML elements using Javascript:',
         multipleChoices: ['getElementbyId()', 'getElementsByClassName()', 'Both A and B', 'None of the above'],
         answer: 'Both A and B'
     },
+
+// Question 2
+
+    {
+        question: 'When an operators value is NULL, the typeof returned by the unary operator is:',
+        multipleChoices: ['Boolean', 'Undefined', 'Object', 'Integer'],
+        answer: 'Object'
+    },
+
+    // Question 3
+
+    {
+        question: 'Javascript is an _______ language?',
+        multipleChoices: ['Object-Oriented', 'Object-Based', 'Procedural', 'None of the above'],
+        answer: 'Object-Oriented'
+    },
+
 ];
 
 // This syntax was taken from the UW Gitlab repository, on Web-APIs - Day 01 - 09-Ins-Timers-Intervals
