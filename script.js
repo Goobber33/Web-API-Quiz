@@ -1,9 +1,13 @@
 var score = 0;
-var questionsIndex = 0;
+var currentQuestion = 0;
+var secondsLeft = 76;
 var startScreenEl = document.getElementById('start-screen');
 var startButtonEl = document.getElementById('start-button');
 var timeEl = document.querySelector(".time");
-var secondsLeft = 76;
+var questionsEl = document.getElementById("question");
+var multipleChoicesEl = document.getElementById('multi-choices');
+var answerEl = document.getElementById('answer');
+
 
 // Found these questions on https://www.interviewbit.com/javascript-mcq/
 // I got this idea from the event-bubbling section in the UW Gitlab.
@@ -52,46 +56,30 @@ var multiQuestions = [
 
 console.log(multiQuestions[4].multipleChoices[3]);
 
+// Start button. On-click, it will hide the original HTML and display the questions and timer
 
-startButtonEl.addEventListener('click', function setTime() {
-        startScreenEl.classList.add("hide");
-        var timerInterval = setInterval(function () {
-            secondsLeft--;
-            timeEl.textContent = 'Time Remaining: ' + secondsLeft;
-    
-            if (secondsLeft === 0) {
-                clearInterval(timerInterval)
-            }
-    
-        }, 1000);
-    }
+startButtonEl.addEventListener('click', function () {
+    startScreenEl.classList.add("hide");
+    startButtonEl.classList.add("hide");
+    var timerInterval = setInterval(function () {
+        secondsLeft--;
+        timeEl.textContent = 'Time Remaining: ' + secondsLeft;
 
+        if (secondsLeft === 0) {
+            clearInterval(timerInterval)
+        }
+
+    }, 1000);
+}
 );
 
 
+function grabQuestion() {
+    var current
+}
 
 
 // TO DO: I need to come up with a function to call this variable, and print the questions on the page. Possibly with .innerHTML
-
-
-// This syntax was taken from the UW Gitlab repository, on Web-APIs - Day 01 - 09-Ins-Timers-Intervals
-
-// function setTime() {
-
-//     var timerInterval = setInterval(function () {
-//         secondsLeft--;
-//         timeEl.textContent = 'Time Remaining: ' + secondsLeft;
-
-//         if (secondsLeft === 0) {
-//             clearInterval(timerInterval)
-//         }
-
-//     }, 1000);
-// }
-
-// setTime();
-
-
 
 
 // Step 1 hide the start screen upon the game starting
