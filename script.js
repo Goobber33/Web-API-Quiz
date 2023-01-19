@@ -2,10 +2,9 @@ var score = 0;
 var questionsIndex = 0;
 var startScreenEl = document.getElementById('start-screen');
 var startButtonEl = document.getElementById('start-button');
+var timeEl = document.querySelector(".time");
+var secondsLeft = 76;
 
-
-
-// I need to write questions, multiple choice answers, and the correct answer
 // Found these questions on https://www.interviewbit.com/javascript-mcq/
 // I got this idea from the event-bubbling section in the UW Gitlab.
 var multiQuestions = [
@@ -54,9 +53,20 @@ var multiQuestions = [
 console.log(multiQuestions[4].multipleChoices[3]);
 
 
-startButtonEl.addEventListener('click', function() {
+startButtonEl.addEventListener('click', function setTime() {
         startScreenEl.classList.add("hide");
-});
+        var timerInterval = setInterval(function () {
+            secondsLeft--;
+            timeEl.textContent = 'Time Remaining: ' + secondsLeft;
+    
+            if (secondsLeft === 0) {
+                clearInterval(timerInterval)
+            }
+    
+        }, 1000);
+    }
+
+);
 
 
 
@@ -66,24 +76,20 @@ startButtonEl.addEventListener('click', function() {
 
 // This syntax was taken from the UW Gitlab repository, on Web-APIs - Day 01 - 09-Ins-Timers-Intervals
 
-var timeEl = document.querySelector(".time");
-var secondsLeft = 75;
+// function setTime() {
 
-function setTime() {
+//     var timerInterval = setInterval(function () {
+//         secondsLeft--;
+//         timeEl.textContent = 'Time Remaining: ' + secondsLeft;
 
-    var timerInterval = setInterval(function () {
-        secondsLeft--;
-        timeEl.textContent = 'Time Remaining: ' + secondsLeft;
+//         if (secondsLeft === 0) {
+//             clearInterval(timerInterval)
+//         }
 
-        if (secondsLeft === 0) {
-            clearInterval(timerInterval)
-            sendMessage();
-        }
+//     }, 1000);
+// }
 
-    }, 1000);
-}
-
-setTime();
+// setTime();
 
 
 
