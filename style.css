@@ -16,3 +16,11 @@
     padding-left: 14px;
     font-size: 20px;
 }
+
+.hide {
+    display: none;
+}
+
+.revealed {
+    display: block;
+}

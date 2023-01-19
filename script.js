@@ -1,6 +1,11 @@
+var score = 0;
+var questionsIndex = 0;
+var startScreenEl = document.getElementById('start-screen');
+var startButtonEl = document.getElementById('start-button');
+
+
+
 // I need to write questions, multiple choice answers, and the correct answer
-
-
 // Found these questions on https://www.interviewbit.com/javascript-mcq/
 // I got this idea from the event-bubbling section in the UW Gitlab.
 var multiQuestions = [
@@ -46,13 +51,23 @@ var multiQuestions = [
     },
 ];
 
+console.log(multiQuestions[4].multipleChoices[3]);
+
+
+startButtonEl.addEventListener('click', function() {
+        startScreenEl.classList.add("hide");
+});
+
+
+
+
 // TO DO: I need to come up with a function to call this variable, and print the questions on the page. Possibly with .innerHTML
 
 
 // This syntax was taken from the UW Gitlab repository, on Web-APIs - Day 01 - 09-Ins-Timers-Intervals
 
 var timeEl = document.querySelector(".time");
-var secondsLeft = 60;
+var secondsLeft = 75;
 
 function setTime() {
 
@@ -62,13 +77,23 @@ function setTime() {
 
         if (secondsLeft === 0) {
             clearInterval(timerInterval)
-            sendMessage('Time is up');
+            sendMessage();
         }
 
     }, 1000);
 }
 
 setTime();
+
+
+
+
+// Step 1 hide the start screen upon the game starting
+// Step 1A: Showing new content when clicking start
+// Step 2 How do you progress the gameplay
+// Step 3 What happens when the game is over?
+
+
 
 
 
@@ -81,5 +106,7 @@ setTime();
 
 
 // Questions
+
+// What is the significance of an anonymous function in JS
 
 // For this project and in general, would it be better to style in CSS or JS (Example: h1El.setAttribute("style", "margin:auto; width:50%; text-align:center;");)
