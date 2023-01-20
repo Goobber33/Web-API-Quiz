@@ -25,24 +25,16 @@
     margin: 20px;
 }
 
-#timer {
-    float: right;
-}
 
 h1 {
     text-align: center;
 }
 
 li {
-    background-image: linear-gradient(to right, #4b2e83, white);
+    background-color:#4b2e83;
     margin-top: 10px;
     padding: 5px 15px;
     width: 80%;
     font-size: 18px;
     color: white;
-}
-
-li:hover {
-    color: #b7a57a;
-    cursor: pointer;
 }
