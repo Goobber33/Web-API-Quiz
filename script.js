@@ -7,6 +7,7 @@ var timeEl = document.querySelector(".time");
 var questionsEl = document.getElementById("question");
 var multipleChoicesEl = document.getElementById('multi-choices');
 var answerEl = document.getElementById('answer');
+var apiQuizEl = document.getElementById('api-quiz');
 
 
 // Found these questions on https://www.interviewbit.com/javascript-mcq/
@@ -54,13 +55,12 @@ var multiQuestions = [
     },
 ];
 
-console.log(multiQuestions[4].multipleChoices[3]);
+// console.log(multiQuestions[4].multipleChoices[3]);
 
 // Start button. On-click, it will hide the original HTML and display the questions and timer
 
 startButtonEl.addEventListener('click', function () {
-    startScreenEl.classList.add("hide");
-    startButtonEl.classList.add("hide");
+        startScreenEl.classList.add("hide");
     var timerInterval = setInterval(function () {
         secondsLeft--;
         timeEl.textContent = 'Time Remaining: ' + secondsLeft;
@@ -73,10 +73,22 @@ startButtonEl.addEventListener('click', function () {
 }
 );
 
-
-function grabQuestion() {
-    var current
+function checkResponse() {
+    
 }
+
+function questions() {
+    // questionsEl.textContent = multiQuestions[0].question;
+
+        for (var i = 0; i < multiQuestions.length; i++) {
+            questionsEl.textContent = multiQuestions[i].question;
+        }
+
+        
+    // console.log(multiQuestions[0].question); 
+}
+
+questions()
 
 
 // TO DO: I need to come up with a function to call this variable, and print the questions on the page. Possibly with .innerHTML
@@ -84,6 +96,7 @@ function grabQuestion() {
 
 // Step 1 hide the start screen upon the game starting
 // Step 1A: Showing new content when clicking start
+// Step 1B: Get one question on the screen
 // Step 2 How do you progress the gameplay
 // Step 3 What happens when the game is over?
 
