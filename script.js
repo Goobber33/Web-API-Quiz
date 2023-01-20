@@ -175,14 +175,14 @@ function allDone() {
     }
 
 
-    // Label
+    // Asks user to fill out the input box with their initials
     var enterInitials = document.createElement("label");
     enterInitials.setAttribute("id", "createLabel");
     enterInitials.textContent = "Please enter in your initials: ";
 
     startScreenEl.appendChild(enterInitials);
 
-    // input
+    // This is for the input box where the user will put their initials
     var inputBox = document.createElement("input");
     inputBox.setAttribute("type", "text");
     inputBox.setAttribute("id", "initials");
@@ -190,7 +190,7 @@ function allDone() {
 
     startScreenEl.appendChild(inputBox);
 
-    // submit
+    // This is for the submit button for the user to submit their highscore
     var submitBtn = document.createElement("button");
     submitBtn.setAttribute("type", "submit");
     submitBtn.setAttribute("id", "Submit");
