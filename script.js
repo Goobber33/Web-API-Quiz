@@ -85,10 +85,10 @@ startButtonEl.addEventListener("click", function () {
             }
         }, 1000);
     }
-    render(currentQuestion);
+    mainScreen(currentQuestion);
 });
 
-function render(currentQuestion) {
+function mainScreen(currentQuestion) {
     startScreenEl.innerHTML = "";
     createUl.innerHTML = "";
     for (var i = 0; i < multiQuestions.length; i++) {
@@ -102,11 +102,11 @@ function render(currentQuestion) {
         pasteItem.textContent = newItem;
         startScreenEl.appendChild(createUl);
         createUl.appendChild(pasteItem);
-        pasteItem.addEventListener("click", (compare));
+        pasteItem.addEventListener("click", (getAnswer));
     })
 }
 
-function compare(event) {
+function getAnswer(event) {
     var pageElement = event.target;
 
     if (pageElement.matches("li")) {
@@ -130,7 +130,7 @@ function compare(event) {
         allDone();
         createText.textContent = "End of quiz!" + " " + "You got  " + score + "/" + multiQuestions.length + " Correct!";
     } else {
-        render(currentQuestion);
+        mainScreen(currentQuestion);
     }
     startScreenEl.appendChild(createText);
 
