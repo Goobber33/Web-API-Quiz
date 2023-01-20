@@ -102,7 +102,7 @@ function mainScreen(currentQuestion) {
         startScreenEl.textContent = usersQuestion;
     }
 
-        // This section allows for the next question to be displayed when the first question is answered.
+    // This section allows for the next question to be displayed when the first question is answered.
 
     usersMultiChoice.forEach(function (newItem) {
         var pasteItem = document.createElement("li");
@@ -198,8 +198,37 @@ function allDone() {
 
     startScreenEl.appendChild(submitBtn);
 
+    // Event listener to capture initials and local storage for initials and score
+    // Learned about localstorage and JSON.pars/stringify from UW Gitlab - Web-APIs day 03
+    submitBtn.addEventListener("click", function () {
+        var initialBox = enterInitials.value;
+
+        if (initialBox === null) {
+
+            console.log("No value entered!");
+
+        } else {
+            var finalHighScore = {
+                initials: initialBox,
+                score: timeRemaining
+            }
+            console.log(finalHighScore);
+            var completedScores = localStorage.getItem("allScores");
+            if (completedScores === null) {
+                completedScores = [];
+            } else {
+                completedScores = JSON.parse(completedScores);
+            }
+            completedScores.push(completedScores);
+            var newScore = JSON.stringify(allScores);
+            localStorage.setItem("allScores", newScore);
+            // Travels to final page
+            window.location.replace("totalscore.html");
+        }
+    });
 
 }
+
 
 // Step 1 hide the start screen upon the game starting
 // Step 1A: Showing new content when clicking start
