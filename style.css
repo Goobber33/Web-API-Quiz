@@ -14,6 +14,12 @@
     color: white;
 }
 
+#start-button:hover {
+    background-color: white;
+    color: #85754d;
+    cursor: pointer;
+}
+
 #questionsDiv {
     margin: 20px;
 }

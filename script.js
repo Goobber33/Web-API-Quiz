@@ -96,7 +96,7 @@ function mainScreen(currentQuestion) {
         var usersMultiChoice = multiQuestions[currentQuestion].multipleChoices;
         startScreenEl.textContent = usersQuestion;
     }
-  
+
     usersMultiChoice.forEach(function (newItem) {
         var pasteItem = document.createElement("li");
         pasteItem.textContent = newItem;
@@ -123,7 +123,7 @@ function getAnswer(event) {
         }
 
     }
-   
+
     currentQuestion++;
 
     if (currentQuestion >= multiQuestions.length) {
