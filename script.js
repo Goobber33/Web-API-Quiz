@@ -88,14 +88,21 @@ startButtonEl.addEventListener("click", function () {
     mainScreen(currentQuestion);
 });
 
+// Function for rendering the questions, choices, and answers. The for loop allows for questions to be added in the future with multiQuestion.length
+
 function mainScreen(currentQuestion) {
     startScreenEl.innerHTML = "";
     createUl.innerHTML = "";
     for (var i = 0; i < multiQuestions.length; i++) {
+
+        //  Variables appending the questions and choices for the quiz
+
         var usersQuestion = multiQuestions[currentQuestion].question;
         var usersMultiChoice = multiQuestions[currentQuestion].multipleChoices;
         startScreenEl.textContent = usersQuestion;
     }
+
+        // This section allows for the next question to be displayed when the first question is answered.
 
     usersMultiChoice.forEach(function (newItem) {
         var pasteItem = document.createElement("li");
@@ -105,6 +112,8 @@ function mainScreen(currentQuestion) {
         pasteItem.addEventListener("click", (getAnswer));
     })
 }
+
+// This function will check the answer from the choice selected and determine if it is correct or not.
 
 function getAnswer(event) {
     var pageElement = event.target;
@@ -124,6 +133,8 @@ function getAnswer(event) {
 
     }
 
+    // currentQuestioj determines which question the user is currently on
+
     currentQuestion++;
 
     if (currentQuestion >= multiQuestions.length) {
@@ -138,29 +149,9 @@ function getAnswer(event) {
 
 
 
-// TO DO: I need to come up with a function to call this variable, and print the questions on the page. Possibly with .innerHTML
-
 
 // Step 1 hide the start screen upon the game starting
 // Step 1A: Showing new content when clicking start
 // Step 1B: Get one question on the screen
 // Step 2 How do you progress the gameplay
 // Step 3 What happens when the game is over?
-
-
-
-
-
-
-
-
-
-
-
-
-
-// Questions
-
-// What is the significance of an anonymous function in JS
-
-// For this project and in general, would it be better to style in CSS or JS (Example: h1El.setAttribute("style", "margin:auto; width:50%; text-align:center;");)
