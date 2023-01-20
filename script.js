@@ -55,12 +55,10 @@ var multiQuestions = [
     },
 ];
 
-// console.log(multiQuestions[4].multipleChoices[3]);
-
 // Start button. On-click, it will hide the original HTML and display the questions and timer
 
 startButtonEl.addEventListener('click', function () {
-        startScreenEl.classList.add("hide");
+    startScreenEl.classList.add("hide");
     var timerInterval = setInterval(function () {
         secondsLeft--;
         timeEl.textContent = 'Time Remaining: ' + secondsLeft;
@@ -70,22 +68,16 @@ startButtonEl.addEventListener('click', function () {
         }
 
     }, 1000);
-}
-);
-
-function checkResponse() {
-    
-}
+});
 
 function questions() {
     // questionsEl.textContent = multiQuestions[0].question;
 
-        for (var i = 0; i < multiQuestions.length; i++) {
-            questionsEl.textContent = multiQuestions[i].question;
-        }
+    for (var i = 0; i < multiQuestions.length; i++) {
+        questionsEl.textContent = multiQuestions[i].question;
 
         
-    // console.log(multiQuestions[0].question); 
+    }
 }
 
 questions()
