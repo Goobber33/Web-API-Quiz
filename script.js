@@ -147,6 +147,34 @@ function getAnswer(event) {
 
 }
 
+function allDone() {
+    startScreenEl.innerHTML = "";
+    timeEl.innerHTML = "";
+
+    // Heading:
+    var createHeader = document.createElement("h1");
+    createHeader.setAttribute("id", "createHeader");
+    createHeader.textContent = "Test is Over!!"
+
+    startScreenEl.appendChild(createHeader);
+
+    // Paragraph
+    var createPTag = document.createElement("p");
+    createPTag.setAttribute("id", "createPTag");
+
+    startScreenEl.appendChild(createPTag);
+
+    // Calculates time remaining and replaces it with score
+    if (secondsLeft >= 0) {
+        var timeRemaining = secondsLeft;
+        var createPTag2 = document.createElement("p");
+        clearInterval(holdInterval);
+        createPTag.textContent = "Your final score is: " + timeRemaining;
+
+        startScreenEl.appendChild(createPTag2);
+    }
+}
+
 
 
 
