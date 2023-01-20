@@ -1,13 +1,24 @@
 var score = 0;
 var currentQuestion = 0;
 var secondsLeft = 76;
+
+// Variables for my buttons
+
 var startScreenEl = document.getElementById('start-screen');
 var startButtonEl = document.getElementById('start-button');
+var nextButtonEl = document.getElementById('next-button');
+
+// Variable for the timer, querySelector selects the child element from the timer class from my index.html file
+
 var timeEl = document.querySelector(".time");
+
+// Variables for the quiz 
+
+var apiQuizEl = document.getElementById('api-quiz');
 var questionsEl = document.getElementById("question");
 var multipleChoicesEl = document.getElementById('multi-choices');
 var answerEl = document.getElementById('answer');
-var apiQuizEl = document.getElementById('api-quiz');
+
 
 
 // Found these questions on https://www.interviewbit.com/javascript-mcq/
@@ -59,6 +70,7 @@ var multiQuestions = [
 
 startButtonEl.addEventListener('click', function () {
     startScreenEl.classList.add("hide");
+
     var timerInterval = setInterval(function () {
         secondsLeft--;
         timeEl.textContent = 'Time Remaining: ' + secondsLeft;
@@ -76,7 +88,7 @@ function questions() {
     for (var i = 0; i < multiQuestions.length; i++) {
         questionsEl.textContent = multiQuestions[i].question;
 
-        
+
     }
 }
 
