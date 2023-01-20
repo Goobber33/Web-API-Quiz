@@ -168,7 +168,7 @@ function allDone() {
     if (secondsLeft >= 0) {
         var timeRemaining = secondsLeft;
         var createPTag2 = document.createElement("p");
-        clearInterval(holdInterval);
+        clearInterval(pauseInterval);
         createPTag.textContent = "Your final score is: " + timeRemaining;
 
         startScreenEl.appendChild(createPTag2);
