@@ -173,10 +173,33 @@ function allDone() {
 
         startScreenEl.appendChild(createPTag2);
     }
+
+
+    // Label
+    var enterInitials = document.createElement("label");
+    enterInitials.setAttribute("id", "createLabel");
+    enterInitials.textContent = "Please enter in your initials: ";
+
+    startScreenEl.appendChild(enterInitials);
+
+    // input
+    var inputBox = document.createElement("input");
+    inputBox.setAttribute("type", "text");
+    inputBox.setAttribute("id", "initials");
+    inputBox.textContent = "";
+
+    startScreenEl.appendChild(inputBox);
+
+    // submit
+    var submitBtn = document.createElement("button");
+    submitBtn.setAttribute("type", "submit");
+    submitBtn.setAttribute("id", "Submit");
+    submitBtn.textContent = "Submit";
+
+    startScreenEl.appendChild(submitBtn);
+
+
 }
-
-
-
 
 // Step 1 hide the start screen upon the game starting
 // Step 1A: Showing new content when clicking start
