@@ -4,7 +4,7 @@
 
 # Website Link
 
-https://goobber33.github.io/Web-API-Quiz/
+https://goobber33.github.io/Web-API-Quiz/index.html
 
 # Installation
 
