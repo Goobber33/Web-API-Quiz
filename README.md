@@ -14,7 +14,7 @@ Install the index.html, totalscore.html, style.css, totalscore.css, totalscore.j
 
  A screenshot of some sections of code from my JavaScript for this project. 
 
-![JS](images/Javascript.jpg)
+![JS](images/JavaScript.jpg)
 
 Screenshots of the website. The website should resemble this screenshot when deployed.
 
