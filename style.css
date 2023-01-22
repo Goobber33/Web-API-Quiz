@@ -7,6 +7,11 @@
     font-size: 20px;
 }
 
+.hs {
+    font-size: 20px;
+    font-weight: bold;
+}
+
 #start-button {
     background-color: #4b2e83;
     margin-left: 33%;
@@ -27,11 +32,16 @@
 
 #timer {
     float: right;
+    font-size: 20px;
+    font-weight: bold;
 }
 
-h1 {
+h1, h2 {
     text-align: center;
+    font-weight: bold;
 }
+
+
 
 li {
     background-image: linear-gradient(to right, #4b2e83, white);

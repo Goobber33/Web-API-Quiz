@@ -126,14 +126,16 @@ function getAnswer(event) {
             score++;
             createText.textContent = "Correct! The answer is:  " + multiQuestions[currentQuestion].answer;
         } else {
+
             // Will deduct -10 seconds off secondsLeft for wrong answers
+
             secondsLeft = secondsLeft - wrongAnswer;
             createText.textContent = "Wrong! ): The correct answer is:  " + multiQuestions[currentQuestion].answer;
         }
 
     }
 
-    // currentQuestioj determines which question the user is currently on
+    // currentQuestion determines which question the user is currently on
 
     currentQuestion++;
 
@@ -147,91 +149,96 @@ function getAnswer(event) {
 
 }
 
+// All done function that will return a "Test is over" string, will show the score, end of quiz score, and an input box to enter in initials
+
 function allDone() {
     startScreenEl.innerHTML = "";
     timeEl.innerHTML = "";
 
-    // Heading:
-    var createHeader = document.createElement("h1");
-    createHeader.setAttribute("id", "createHeader");
-    createHeader.textContent = "Test is Over!!"
+    // Creates an h2 element when the quiz is over
 
-    startScreenEl.appendChild(createHeader);
+    var createHeaderTwo = document.createElement("h2");
+    createHeaderTwo.setAttribute("id", "createHeaderTwo");
+    createHeaderTwo.textContent = "Test is Over!!"
 
-    // Paragraph
-    var createPTag = document.createElement("p");
-    createPTag.setAttribute("id", "createPTag");
+    startScreenEl.appendChild(createHeaderTwo);
 
-    startScreenEl.appendChild(createPTag);
+    // Creates a p tag with the final score when the quiz is over
 
-    // Calculates time remaining and replaces it with score
+    var addPTag = document.createElement("p");
+    addPTag.setAttribute("id", "addPTag");
+
+    startScreenEl.appendChild(addPTag);
+
+    // Calculates time remaining and replaces it with the users score
+
     if (secondsLeft >= 0) {
-        var timeRemaining = secondsLeft;
-        var createPTag2 = document.createElement("p");
+        var timeLeft = secondsLeft;
+        var addPTag2 = document.createElement("p");
         clearInterval(pauseInterval);
-        createPTag.textContent = "Your final score is: " + timeRemaining;
+        addPTag.textContent = "Your final score is: " + timeLeft;
 
-        startScreenEl.appendChild(createPTag2);
+        startScreenEl.appendChild(addPTag2);
     }
 
 
-    // Asks user to fill out the input box with their initials
+    // Adds the submit box to enter in ititials
+
+    // Enter your initials text
+
     var enterInitials = document.createElement("label");
     enterInitials.setAttribute("id", "createLabel");
-    enterInitials.textContent = "Please enter in your initials: ";
+    enterInitials.textContent = "Enter your initials: ";
 
     startScreenEl.appendChild(enterInitials);
 
-    // This is for the input box where the user will put their initials
-    var inputBox = document.createElement("input");
-    inputBox.setAttribute("type", "text");
-    inputBox.setAttribute("id", "initials");
-    inputBox.textContent = "";
+    // Submit box
 
-    startScreenEl.appendChild(inputBox);
+    var initialBox = document.createElement("input");
+    initialBox.setAttribute("type", "text");
+    initialBox.setAttribute("id", "initials");
+    initialBox.textContent = "";
 
-    // This is for the submit button for the user to submit their highscore
-    var submitBtn = document.createElement("button");
+    startScreenEl.appendChild(initialBox);
+
+    // Submit Button
+
+    var submitBtn= document.createElement("button");
     submitBtn.setAttribute("type", "submit");
     submitBtn.setAttribute("id", "Submit");
     submitBtn.textContent = "Submit";
 
     startScreenEl.appendChild(submitBtn);
 
-    // Event listener to capture initials and local storage for initials and score
-    // Learned about localstorage and JSON.pars/stringify from UW Gitlab - Web-APIs day 03
+// The code below will take the initials and score, and when the submit button is clicked will enter in the score to initial storage and open up the totalscores page
+    
     submitBtn.addEventListener("click", function () {
-        var initialBox = enterInitials.value;
+        var usersInitials = initialBox.value;
 
-        if (initialBox === null) {
+        if (usersInitials === null) {
 
             console.log("No value entered!");
 
         } else {
-            var finalHighScore = {
-                initials: initialBox,
-                score: timeRemaining
+            var finalScore = {
+                initials: usersInitials,
+                score: timeLeft
             }
-            console.log(finalHighScore);
-            var completedScores = localStorage.getItem("allScores");
-            if (completedScores === null) {
-                completedScores = [];
+            console.log(finalScore);
+            var allScores = localStorage.getItem("allScores");
+            if (allScores === null) {
+                allScores = [];
             } else {
-                completedScores = JSON.parse(completedScores);
+                allScores = JSON.parse(allScores);
             }
-            completedScores.push(completedScores);
+            allScores.push(finalScore);
             var newScore = JSON.stringify(allScores);
             localStorage.setItem("allScores", newScore);
-            // Travels to final page
+        
+            // This will bring the user to the High Scores page
+
             window.location.replace("totalscore.html");
         }
     });
 
 }
-
-
-// Step 1 hide the start screen upon the game starting
-// Step 1A: Showing new content when clicking start
-// Step 1B: Get one question on the screen
-// Step 2 How do you progress the gameplay
-// Step 3 What happens when the game is over?

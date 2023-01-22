@@ -1,6 +1,6 @@
-var highScores = document.querySelector("#choicesUl");
-var clear = document.querySelector("#clear-hs");
-var goBack = document.querySelector("#return-home");
+var highScore = document.querySelector("#totalScore");
+var clear = document.querySelector("#clearhs");
+var goBack = document.querySelector("#return");
 
 // Event listener to clear scores 
 clear.addEventListener("click", function () {
@@ -17,11 +17,11 @@ if (allScores !== null) {
 
         var createLi = document.createElement("li");
         createLi.textContent = allScores[i].initials + " " + allScores[i].score;
-        highScores.appendChild(createLi);
+        highScore.appendChild(createLi);
 
     }
 }
 // Event listener to move to index page
 goBack.addEventListener("click", function () {
-    window.location.replace("./index.html");
+    window.location.replace("index.html");
 });
