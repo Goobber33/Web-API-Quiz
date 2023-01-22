@@ -203,15 +203,15 @@ function allDone() {
 
     // Submit Button
 
-    var submitBtn= document.createElement("button");
+    var submitBtn = document.createElement("button");
     submitBtn.setAttribute("type", "submit");
     submitBtn.setAttribute("id", "Submit");
     submitBtn.textContent = "Submit";
 
     startScreenEl.appendChild(submitBtn);
 
-// The code below will take the initials and score, and when the submit button is clicked will enter in the score to initial storage and open up the totalscores page
-    
+    // The code below will take the initials and score, and when the submit button is clicked will enter in the score to initial storage and open up the totalscores page
+
     submitBtn.addEventListener("click", function () {
         var usersInitials = initialBox.value;
 
@@ -234,7 +234,7 @@ function allDone() {
             allScores.push(finalScore);
             var newScore = JSON.stringify(allScores);
             localStorage.setItem("allScores", newScore);
-        
+
             // This will bring the user to the High Scores page
 
             window.location.replace("totalscore.html");
