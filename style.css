@@ -57,3 +57,47 @@ li:hover {
     color: #b7a57a;
     cursor: pointer;
 }
+
+@media screen and (max-width: 786px) {
+ 
+    #wrap {
+        position: absolute;
+        left: 20%;
+    }
+
+    a {
+        margin-left: 20%;
+    }
+        #return {
+            
+            position: relative;
+            left: 55%;
+        }
+
+        #clearhs {
+            position: relative;
+            right: 5%;
+            
+        }
+
+        .hs {
+            position: relative;
+            right: 20%;
+        }
+
+    }
+        
+    @media screen and (max-width: 640px) {
+     body {
+            min-width: 640px;
+        }
+
+    #wrap {
+        position: absolute;
+        left: 10%;
+    }
+      a {
+          margin-left: 10%;
+      }
+     
+}
