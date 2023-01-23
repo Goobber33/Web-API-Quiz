@@ -58,8 +58,13 @@ li:hover {
     cursor: pointer;
 }
 
+/* A Media Query max-width: 786px */
 @media screen and (max-width: 786px) {
- 
+
+    body {
+        max-width: 786px;
+    }
+
     #wrap {
         position: absolute;
         left: 20%;
@@ -68,36 +73,35 @@ li:hover {
     a {
         margin-left: 20%;
     }
-        #return {
-            
-            position: relative;
-            left: 55%;
-        }
 
-        #clearhs {
-            position: relative;
-            right: 5%;
-            
-        }
+    #return {
 
-        .hs {
-            position: relative;
-            right: 20%;
-        }
+        position: relative;
+        left: 55%;
+    }
+
+    #clearhs {
+
+        position: relative;
+        right: 5%;
 
     }
-        
-    @media screen and (max-width: 640px) {
-     body {
-            min-width: 640px;
-        }
+}
+
+/* A Media Query max-width: 640px */
+@media screen and (max-width: 640px) {
+    body {
+        min-width: 640px;
+    }
 
     #wrap {
         position: absolute;
         left: 10%;
     }
-      a {
-          margin-left: 10%;
-      }
-     
+
+    a {
+        margin-left: 10%;
+    }
+
+
 }
